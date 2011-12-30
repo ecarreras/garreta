@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<tryton>
+    <data>
+        <menuitem name="Garreta" id="menu_garreta"/>
+        <!-- Llistat de persones -->
+	<record model="ir.ui.view" id="persona_view_tree">
+	    <field name="model">persona</field>
+	    <field name="type">tree</field>
+	    <field name="arch" type="xml">
+	        <![CDATA[
+		<tree string="Persones">
+		    <field name="name"/>
+		</tree>
+		]]>
+	    </field>
+        </record>
+	<!-- Formulari de persones -->
+	 <record model="ir.ui.view" id="persona_view_form">
+	    <field name="model">persona</field>
+	    <field name="type">form</field>
+	    <field name="arch" type="xml">
+	        <![CDATA[
+		<form string="Persona">
+		    <field name="cognom1"/>
+		    <field name="cognom2"/>
+		    <field name="nom"/>
+		</form>
+		]]>
+	    </field>
+        </record>
+	<record model="ir.action.act_window" id="act_persona_form">
+	    <field name="name">Persones</field>
+	    <field name="res_model">persona</field>
+	</record>
+	<record model="ir.action.act_window.view" id="act_persona_form_view1">
+	    <field name="sequence" eval="10"/>
+	    <field name="view" ref="persona_view_tree"/>
+	    <field name="act_window" ref="act_persona_form"/>
+	</record>
+	<record model="ir.action.act_window.view" id="act_persona_form_view2">
+	    <field name="sequence" eval="20"/>
+	    <field name="view" ref="persona_view_form"/>
+	    <field name="act_window" ref="act_persona_form"/>
+	</record>
+	<menuitem parent="menu_garreta" id="menu_persona_tree" icon="tryton-list" action="act_persona_form"/>	
+    </data>
+</tryton>

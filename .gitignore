@@ -1,0 +1,6 @@
+.project
+.pydevproject
+.settings/
+build/
+dist/
+trytond_garreta.egg-info/
