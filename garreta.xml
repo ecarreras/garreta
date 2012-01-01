@@ -21,9 +21,47 @@
 	    <field name="arch" type="xml">
 	        <![CDATA[
 		<form string="Persona">
-		    <field name="cognom1"/>
-		    <field name="cognom2"/>
-		    <field name="nom"/>
+		    <notebook tabpos="up" colspan="6">
+		    <page string="General" id="general">
+		        <label name="cognom1"/>
+		        <field name="cognom1"/>
+		        <label name="cognom2"/>
+		        <field name="cognom2"/>
+		        <label name="nom"/>
+		        <field name="nom"/>
+		        <newline/>
+		        <label name="data_naixement"/>
+		        <field name="data_naixement"/>
+		        <label name="lloc_naixement"/>
+		        <field name="lloc_naixement" select="1"/>
+		        <label name="data_obit"/>
+		        <field name="data_obit"/>
+		        <label name="lloc_obit"/>
+		        <field name="lloc_obit"/>
+			<label name="sexe"/>
+			<field name="sexe"/>
+			<label name="professio"/>
+			<field name="professio"/>
+			<separator string="Família" colspan="4" id="familia"/>
+			<label name="pare"/>
+			<field name="pare"/>
+			<label name="mare"/>
+			<field name="mare"/>
+			<label name="conjugue_actual"/>
+			<field name="conjugue_actual"/>
+			<field name="fills" colspan="4">
+			    <tree string="Fills" fill="1">
+			        <field name="name"/>
+				<field name="data_naixement"/>
+				<field name="pare"/>
+				<field name="mare"/>
+			    </tree>
+			</field>
+		    </page>
+		    <page string="Notes" id="notes">
+		        <field name="notes"/>
+		    </page>
+		    </notebook>
 		</form>
 		]]>
 	    </field>
