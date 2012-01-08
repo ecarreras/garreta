@@ -10,6 +10,7 @@
 	        <![CDATA[
 		<tree string="Persones">
 		    <field name="name"/>
+                    <field name="data_naixement" select="1"/>
 		</tree>
 		]]>
 	    </field>
@@ -49,7 +50,30 @@
 			<field name="mare"/>
 			<label name="conjugue_actual"/>
 			<field name="conjugue_actual"/>
-			<field name="fills" colspan="4">
+                   </page>
+       		   <page string="Matrimonis" id="matrimonis">
+						<field name="matrimonis" colspan="4" mode="tree,form">
+			    <tree string="Matrimonis" fill="1">
+			        <field name="persona1"/>
+				<field name="persona2"/>
+				<field name="data_inici"/>
+				<field name="data_final"/>
+			    </tree>
+                            <form string="Matrimoni">
+                                <label name="persona2"/>
+                                <field name="persona2"/>
+                                <newline/>
+                                <label name="data_inici"/>
+                                <field name="data_inici"/>
+                                <label name="data_final"/>
+                                <field name="data_final"/>
+                                <separator name="notes" colspan="4"/>
+                                <field name="notes" colspan="4"/>
+                            </form>
+			</field>
+                   </page>
+ 	           <page string="Fills" id="fills">
+<field name="fills" colspan="4">
 			    <tree string="Fills" fill="1">
 			        <field name="name"/>
 				<field name="data_naixement"/>
@@ -57,6 +81,7 @@
 				<field name="mare"/>
 			    </tree>
 			</field>
+
 		    </page>
 		    <page string="Notes" id="notes">
 		        <field name="notes"/>
