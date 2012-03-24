@@ -1,6 +1,6 @@
 {
     'name' : 'Garreta',
-    'version' : '2.0.1',
+    'version' : '2.0.2',
     'author' : 'ecarreras',
     'email': 'ecn@lapunxa.com',
     'website': 'http://tit.canprats.net/code',
