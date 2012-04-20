@@ -83,8 +83,12 @@ class Persona(ModelSQL, ModelView):
         """
 	res = {}
 	for persona in self.browse(ids):
-	    res[persona.id] = '%s %s, %s' % (persona.cognom1, persona.cognom2,
-	                                     persona.nom)
+            if persona.cognom2:
+                cognoms = '%s %s' % (persona.cognom1,
+                                     persona.cognom2)
+            else:
+                cognoms = persona.cognom1
+            res[persona.id] = '%s, %s' % (cognoms, persona.nom)
 	return res
 
     def search_nom_complet(self, name, clause):
